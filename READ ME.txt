@@ -1,0 +1,9 @@
+
+Ignore "DADSA 2020-21 COURSEWORK B - FORMAL SPECIFICATION.pdf" 
+
+Open "Design Document.docx" Contains all the design diagrams and pseudocode
+
+Each folder named task has been segmented to only meet the task specification.
+To test the solution for each task enter that folder and run the solution.py
+
+The "solution.py" was developed and tested on Python 3.8.8 upon Windows 10 version: 10.0.19042 Build 19042
