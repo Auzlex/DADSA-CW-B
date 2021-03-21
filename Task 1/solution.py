@@ -36,36 +36,26 @@ def calculate_bodymass_index(patient):
 # determine_classification::takes in object type Patient::returns string classification
 def determine_classification(patient): 
 
-    #TODO:: simple implementation ATM might change later, master definition of limitations????
+    # depending on the body build we change the overweight_to_obese_threshold :: seems to be only factor changing
     if patient.body_build.lower() == "slim": # slim body type
-        if(patient.bmi < 18.5):
-            return "underweight"
-        elif(patient.bmi > 18.5 and patient.bmi < 25):
-            return "normal"
-        elif(patient.bmi > 25 and patient.bmi < 28):
-            return "overweight"
-        elif(patient.bmi > 28):
-            return "obese"
+        overweight_to_obese_threshold = 28
     elif patient.body_build.lower() == "regular": # regular body type
-        if(patient.bmi < 18.5):
-            return "underweight"
-        elif(patient.bmi > 18.5 and patient.bmi < 25):
-            return "normal"
-        elif(patient.bmi > 25 and patient.bmi < 29):
-            return "overweight"
-        elif(patient.bmi > 29):
-            return "obese"
+       overweight_to_obese_threshold = 29
     elif patient.body_build.lower() == "athletic": # regular body type
-        if(patient.bmi < 18.5):
-            return "underweight"
-        elif(patient.bmi > 18.5 and patient.bmi < 25):
-            return "normal"
-        elif(patient.bmi > 25 and patient.bmi < 30):
-            return "overweight"
-        elif(patient.bmi > 30):
-            return "obese"
+        overweight_to_obese_threshold = 30
     else: 
         return "unknown body build" # always expect the unexpected
+
+    # depending on the patient BMI and the overweight_to_obese_threshold
+    # return the classification of this patient which is assigned in patient class
+    if(patient.bmi < 18.5):
+        return "underweight"
+    elif(patient.bmi > 18.5 and patient.bmi < 25):
+        return "normal"
+    elif(patient.bmi > 25 and patient.bmi < overweight_to_obese_threshold):
+        return "overweight"
+    elif(patient.bmi > overweight_to_obese_threshold):
+        return "obese"
 
 # calculate_dob_to_age::takes in object type Patient::returns int age of patient
 def calculate_dob_to_age(patient):
