@@ -1,9 +1,16 @@
-
 Ignore "DADSA 2020-21 COURSEWORK B - FORMAL SPECIFICATION.pdf" 
 
-Open "Design Document.docx" Contains all the design diagrams and pseudocode
+There are 3 folders named for each task, in these folders will contain the design and solution
+script for that specific task.
 
-Each folder named task has been segmented to only meet the task specification.
-To test the solution for each task enter that folder and run the solution.py
+All scripts were developed and tested upon Windows 10 Version 19042 upon Python 3.8.8 
 
-The "solution.py" was developed and tested on Python 3.8.8 upon Windows 10 version: 10.0.19042 Build 19042
+For task 1:
+    - run the solution.py to run the python code
+    - open "Task 1 Flowchart Design.pdf" to view the flowchart/pseudocode design for that task
+
+For task 2:
+    - blank
+
+For task 3:
+    - blank

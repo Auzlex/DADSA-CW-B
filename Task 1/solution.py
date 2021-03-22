@@ -11,11 +11,11 @@ import csv                              # used for reading csv files
 global PATIENTS # global constant variable named patients
 PATIENTS = []   # set patients to empty list
 
-global CLASSIFICATION_TO_PRIORITY # global constant for priority values
+global WEIGHT_CLASSIFICATION_TO_PRIORITY # global constant for priority values
 
-# priority filter we convert key values to ints for our sorting algorithm to sort to this priority
+# priority filter we convert key values to int for our sorting algorithm to sort to this priority
 # e.g. lowest number the higher priority
-CLASSIFICATION_TO_PRIORITY = {
+WEIGHT_CLASSIFICATION_TO_PRIORITY = {
 
     "obese":        0,
     "underweight":  1,
@@ -72,7 +72,7 @@ class Patient: # patient class is responsible for holding patient information
     # constructor for class patient :: takes in multiple arguments with data relating to patient
     def __init__( self, id_name, date_of_birth, is_female, height, weight, body_build, smoker, asthmatic, nasogastric_tube, hypertension , renal_rt, ileostomy, parenteral_nutrition):
         
-        global CLASSIFICATION_TO_PRIORITY                           # reference to global variable
+        global WEIGHT_CLASSIFICATION_TO_PRIORITY                           # reference to global variable
 
         self.identity_name = id_name                                # stores name code as string
         self.dob = datetime.strptime(date_of_birth, '%d/%m/%Y')     # store DOB as a datetime datatype :: string day/month/year -> datetime
@@ -90,7 +90,7 @@ class Patient: # patient class is responsible for holding patient information
         
         self.bmi = calculate_bodymass_index(self)                   # calculate the BMI
         self.classification = determine_classification(self)        # assign patient classification, pass in self(object) returns string underweight/normal/obese
-        self.conditionPriority = CLASSIFICATION_TO_PRIORITY[self.classification] # convert condition name into priority int :: used for sorting
+        self.conditionPriority = WEIGHT_CLASSIFICATION_TO_PRIORITY[self.classification] # convert condition name into priority int :: used for sorting
 
         self.age = calculate_dob_to_age(self)                       # calculate the age of the patient
 
@@ -100,7 +100,8 @@ class Patient: # patient class is responsible for holding patient information
 """
     Functions: selection_sort 
 """
-# selection_sort :: takes in python list of patient objects sorts them by condition priority
+# selection_sort :: takes in python list of patient objects sorts them by condition priority if sort_via_bmi is false
+# if sort via bmi is true then low_to_high determines the sorting order of the BMI values
 def selection_sort(array, sort_via_bmi = False, low_to_high = True):
 
     for i in range(0, len(array)): # for every element in the list named array
@@ -168,7 +169,7 @@ def read_datafile(): # called on application start when we want to read in the c
     
     # after reading in the data file we need to sort the list of PATIENTS
     # we will perform a selection_sort(ARRAY: Patients) takes in array of patients to sort via the filter defined at the top 
-    # from CLASSIFICATION_TO_PRIORITY
+    # from WEIGHT_CLASSIFICATION_TO_PRIORITY
     selection_sort(PATIENTS)
 
 def display_all_patients(): # called when we want to print all patients in sets of 10
@@ -238,7 +239,7 @@ def display_all_worst_patients():
 
 # read the patients data file
 # this will convert our CSV into list of patient objects
-# and sort them according to the CLASSIFICATION_TO_PRIORITY
+# and sort them according to the WEIGHT_CLASSIFICATION_TO_PRIORITY
 read_datafile()
 
 # display all patients to fullfil task 1 of display print
