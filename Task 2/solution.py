@@ -213,12 +213,12 @@ def read_datafile(): # called on application start when we want to read in the c
         # close csv file
         csvfile.close()
     
-    print("number of patients",line_count-1)
-    print(len(PRIORITY_REFERRAL_PATIENTS))
-    print(len(LOW_PRIORITY_REFERRAL_PATIENTS))
-    print(len(PATIENTS))
-    total = len(PRIORITY_REFERRAL_PATIENTS) + len(LOW_PRIORITY_REFERRAL_PATIENTS) + len(PATIENTS)
-    print(total)
+    # print("number of patients",line_count-1)
+    # print(len(PRIORITY_REFERRAL_PATIENTS))
+    # print(len(LOW_PRIORITY_REFERRAL_PATIENTS))
+    # print(len(PATIENTS))
+    # total = len(PRIORITY_REFERRAL_PATIENTS) + len(LOW_PRIORITY_REFERRAL_PATIENTS) + len(PATIENTS)
+    # print(total)
 
     # after reading the file and placing patients in their respective lists for dietition referral
     # sort all those lists by age from high to low
