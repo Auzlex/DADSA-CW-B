@@ -70,8 +70,12 @@ def determine_conditions(patient):
     if patient.hypertension:
         total_conditions_found += 1 # increment condition found
 
-    # condition if patient is asthmatic or is a smoker
-    if patient.asthmatic or patient.smoker:
+    # condition if patient is asthmatic
+    if patient.asthmatic:
+        total_conditions_found += 1 # increment condition found
+
+     # condition if patient is a smoker
+    if patient.smoker:
         total_conditions_found += 1 # increment condition found
 
     # condition NJT or NGR :: nasogastric_tube
@@ -91,7 +95,6 @@ def determine_conditions(patient):
         total_conditions_found += 1 # increment condition found
 
     return total_conditions_found # return the number of conditions found
-
 
 """
     Classes
@@ -124,7 +127,7 @@ class Patient: # patient class is responsible for holding patient information
 
     def __repr__(self): # method used to represent this class object as a string :: we print name, age, bmi rounded to the 2nd decimal place, and bmi classification
         #return "NAME: {0} | AGE: {1} | BMI: {2} | BMI-C: {3} | CONDITIONS: {4} | GENDER: {5} | REFER D: {6}".format(self.identity_name, self.age, round(self.bmi,2), self.classification, self.number_of_conditions, str(self.is_female).lower().replace("false","Male").replace("true","Female"), self.need_dietitian_referral)
-        return "n: {0}, bb:{1}, smoke:{2}, asthmatic:{3}, NJR:{4}, hyp:{5}, renal:{6}, ileo:{7}, pn:{8}, age:{9}".format( self.identity_name, self.body_build, self.smoker, self.asthmatic, self.nasogastric_tube, self.hypertension, self.renal_rt, self.ileostomy, self.parenteral_nutrition, self.age )
+        return "n: {0}, age:{9}, bmi:{10}, bb:{1}, conditions:{11}, smoke:{2}, asthmatic:{3}, NJR:{4}, hyp:{5}, renal:{6}, ileo:{7}, pn:{8}".format( self.identity_name, self.body_build, self.smoker, self.asthmatic, self.nasogastric_tube, self.hypertension, self.renal_rt, self.ileostomy, self.parenteral_nutrition, self.age, round(self.bmi,2), self.number_of_conditions )
 
 """
     Functions: selection_sort 
