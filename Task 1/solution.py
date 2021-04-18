@@ -218,7 +218,7 @@ def display_worst_patients_via_gender_and_mode(female_only, underweight_mode):
         
         if count >= 5: # if count is greater or equal to five
             break # stop the for loop we found our five patients
-
+                          
 # called when we want to output the worse patients for obese and underweight
 def display_all_worst_patients():
 

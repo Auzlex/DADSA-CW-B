@@ -7,10 +7,14 @@ All scripts were developed and tested upon Windows 10 Version 19042 upon Python 
 
 For task 1:
     - run the solution.py to run the python code
-    - open "Task 1 Flowchart Design.pdf" to view the flowchart/pseudocode design for that task
+    - open "Task 1 Pseudocode.docx" to view the flowchart/pseudocode design for that task
 
 For task 2:
-    - blank
+    - run the solution.py to run the python code
+    - open "Task 2 Pseudocode.docx" to view the flowchart/pseudocode design for that task
 
 For task 3:
-    - blank
+    - open "Justification of design and GDPR discussion.docx" to view task 3
+
+For video demo:
+    - open "Video_demo.mp4"
