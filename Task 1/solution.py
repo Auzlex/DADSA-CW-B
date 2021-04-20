@@ -131,8 +131,10 @@ def selection_sort(array, sort_via_bmi = False, low_to_high = True):
 def datafile_name(): # used to store the data file csv name to read in
     # get the directory of this file to find the CSV file
     dir_path = path.dirname(path.realpath(__file__))   
-    return  dir_path + "\\DADSA 2021 CWK B DATA COLLECTION.csv"
-
+    
+    # perform path join
+    return path.join(dir_path, "DADSA 2021 CWK B DATA COLLECTION.csv" )
+    
 def read_datafile(): # called on application start when we want to read in the csv data
 
     global PATIENTS # global variable reference to patients
